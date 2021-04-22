@@ -1,24 +1,68 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-2 productAddfromImages" *ngFor='let url of imageurls; let i = index'>
-          <img class="img-fluid" [src]="url.base64String">
-          <a (click)="removeImage(i)" class="btn btn-xs btn-danger">Remove</a>
+  <div class="card main-title">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group form-inline">
+          <br>
+          <label class="form-label">Upload Contract</label>
+          <input
+            type="file"
+            class="form-control"
+            (change)="onSelectContractFile($event)"
+            multiple accept="image/*,video/*,.pdf,.csv,.txt"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group form-inline">
+          <br>
+          <label class="form-label">Upload Other</label>
+          <input
+            type="file"
+            class="form-control"
+            (change)="onSelectOtherFile($event)"
+            multiple accept="image/*,video/*,.pdf,.csv,.txt"
+          />
         </div>
       </div>
     </div>
-    <div class="card main-title">
-      <div class="col-md-12">
-        <div class="form-group">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group form-inline">
           <br>
-          <label class="form-label">Add Images</label>
-          <input type="file"
-                 class="form-control"
-                 (change)="onSelectFile($event)"
-                 multiple accept="image/*,video/*,.pdf,.csv,.txt" />
+          <label class="form-label">Upload Requests</label>
+          <input
+            type="file"
+            class="form-control"
+            (change)="onSelectRequestsFile($event)"
+            multiple accept="image/*,video/*,.pdf,.csv,.txt"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group form-inline">
+          <br>
+          <label class="form-label">Upload Supporting Documents</label>
+          <input
+            type="file"
+            class="form-control"
+            (change)="onSelectSupportingFile($event)"
+            multiple accept="image/*,video/*,.pdf,.csv,.txt"
+          />
         </div>
       </div>
     </div>
   </div>
+
+  <!-- <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-2 productAddfromImages" *ngFor='let url of imageurls; let i = index'>
+        <img class="img-fluid" [src]="url.base64String">
+        <a (click)="removeImage(i)" class="btn btn-xs btn-danger">Remove</a>
+      </div>
+    </div>
+  </div> -->
 </div>
